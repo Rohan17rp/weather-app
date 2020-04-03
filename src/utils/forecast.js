@@ -10,8 +10,8 @@ const forecast = (latitude, longitude, callback) => {
         else if (body.message) {
             callback(body.message, undefined)
         }
-        else{
-            callback(undefined, body.name)
+        else{ 
+            callback(undefined, body.name + ' has temp : ' + (body.main.temp - 273.3).toFixed(2) + ' C, pressure : ' + body.main.pressure + ' and humidity : ' + body.main.humidity  )
         }
         
     })
